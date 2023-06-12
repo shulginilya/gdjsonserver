@@ -7,7 +7,7 @@ const middlewares = jsonServer.defaults();
 
 server.use(middlewares);
 
-server.put('/plugins/changeEnability', (res) => {
+server.put('/plugins/changeEnability', (req, res) => {
     const db = router.db;
     const plugins = db.get('plugins').value();
     const isEnabled = plugins.every(p => p.enabled);
